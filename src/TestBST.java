@@ -1,3 +1,9 @@
+/**
+ * Testing my Binary Search Tree
+ * 
+ * @author asantana
+ * 
+ */
 public class TestBST extends TestingClass {
 
 	public static void main(String[] args) {
@@ -95,7 +101,7 @@ public class TestBST extends TestingClass {
 		bst.remove(31);
 		assert bst.findMax() == 23 : "max:23";
 	}
-	
+
 	public void testPreOrder() {
 		BST bst = basicBST();
 		assert "23,14,7,9,17,31".equals(bst.preOrder()) : "preorder 1";

@@ -1,3 +1,9 @@
+/**
+ * This is a node for a Linked List data structure
+ * 
+ * @author asantana
+ * 
+ */
 public class Node {
 	int value;
 	Node next;

@@ -1,5 +1,11 @@
 import java.lang.reflect.Method;
 
+/**
+ * This is the class I use to build the test cases. This will basically call all the method which name starts with "test". This class also enables assertions programatically.
+ * 
+ * @author asantana
+ * 
+ */
 public class TestingClass {
 	static {
 		ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(true);

@@ -1,3 +1,9 @@
+/**
+ * This class tests my linked list implemantation
+ * 
+ * @author asantana
+ * 
+ */
 public class TestLinkedList extends TestingClass {
 	public static void main(String[] args) throws Exception {
 		new TestLinkedList().runAllTest();

@@ -1,3 +1,9 @@
+/**
+ * Linked list implementation
+ * 
+ * @author asantana
+ * 
+ */
 public class LinkedList {
 	Node head;
 	Node tail;
@@ -61,7 +67,7 @@ public class LinkedList {
 			temp.next = temp.next.next;
 			return true;
 		}
-		//case 6
+		// case 6
 		return false;
 	}
 
@@ -78,7 +84,7 @@ public class LinkedList {
 		}
 		return sb.toString();
 	}
-	
+
 	public String toStringReverse() {
 		if (tail == null)
 			return "";

@@ -1,3 +1,9 @@
+/**
+ * Different DSA algorithms covered at the beginning of the book
+ * 
+ * @author asantana
+ * 
+ */
 public class DSAAlgorithms {
 	public static boolean isPalindrome(String value) {
 		String word = value.toUpperCase();
@@ -10,10 +16,10 @@ public class DSAAlgorithms {
 		return word.charAt(left) == word.charAt(right);
 	}
 
-	public static void testFibonacci2() {		
+	public static void testFibonacci2() {
 		assert 885444751 == fibonacci2(71);
 	}
-	
+
 	public static int fibonacci2(int n) {
 		if (n < 1)
 			return 0;
@@ -44,11 +50,9 @@ public class DSAAlgorithms {
 		int n = 70;
 		System.out.print(fibonacci2(n));
 		start = System.currentTimeMillis();
-		System.out.printf(" fibonacci2 done in %d ms \n",
-				(System.currentTimeMillis() - start));
+		System.out.printf(" fibonacci2 done in %d ms \n", (System.currentTimeMillis() - start));
 		System.out.print(fibonacci(n));
-		System.out.printf(" fibonacci done in %d ms \n",
-				(System.currentTimeMillis() - start));
+		System.out.printf(" fibonacci done in %d ms \n", (System.currentTimeMillis() - start));
 
 	}
 }

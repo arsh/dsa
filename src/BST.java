@@ -1,5 +1,9 @@
-import java.io.BufferedReader;
-import java.util.Stack;
+/**
+ * Binary Search Tree implementation
+ * 
+ * @author asantana
+ * 
+ */
 
 public class BST {
 	public BSTNode root;
@@ -69,6 +73,12 @@ public class BST {
 					parent.right = nodeToRemove.left;
 			}
 		}
+
+		/*
+		 * I needed to add this code because when you were trying to delete the root node it was blowing up because of NPE caused when trying to access root's parent which is
+		 * always null
+		 */
+
 		if (parent == null || (nodeToRemove.left != null && nodeToRemove.right != null)) {
 			BSTNode largestValue = nodeToRemove.left;
 			while (largestValue.right != null)
@@ -138,6 +148,9 @@ public class BST {
 		return countNodes(root);
 	}
 
+	/**
+	 * non-recursive min implementation
+	 */
 	public int findMin() {
 		BSTNode current = root;
 		while (current.left != null)
@@ -145,6 +158,9 @@ public class BST {
 		return current.value;
 	}
 
+	/**
+	 * non-recursive max implementation
+	 */
 	public int findMax() {
 		BSTNode current = root;
 		while (current.right != null)

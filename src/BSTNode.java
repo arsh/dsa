@@ -1,3 +1,10 @@
+/**
+ * Binary Search Tree node
+ * 
+ * @author asantana
+ * 
+ */
+
 public class BSTNode {
 	public int value;
 	public BSTNode left;
