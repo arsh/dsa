@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Binary Search Tree implementation
  * 
@@ -169,8 +171,20 @@ public class BST {
 	}
 
 	public String preOrder() {
-		String preOrder = preOrder(root);
-		return preOrder.substring(0, preOrder.length() - 1);
+		StringBuffer sb = new StringBuffer();
+		Stack<BSTNode> stack = new Stack<BSTNode>();
+		stack.push(root);
+		while (true) {
+			BSTNode current = stack.pop();
+			if (current == null)
+				break;
+			sb.append(current.value).append(",");
+			if (current.right != null)
+				stack.push(current.right);
+			if (current.left != null)
+				stack.push(current.left);
+		}
+		return sb.substring(0, sb.length() - 1);
 	}
 
 	public String preOrder(BSTNode root) {
