@@ -174,10 +174,8 @@ public class BST {
 		StringBuffer sb = new StringBuffer();
 		Stack<BSTNode> stack = new Stack<BSTNode>();
 		stack.push(root);
-		while (true) {
+		while (!stack.isEmpty()) {
 			BSTNode current = stack.pop();
-			if (current == null)
-				break;
 			sb.append(current.value).append(",");
 			if (current.right != null)
 				stack.push(current.right);
