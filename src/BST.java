@@ -185,6 +185,11 @@ public class BST {
 		return sb.substring(0, sb.length() - 1);
 	}
 
+	public String preOrderRecursive() {
+		String preOrder = preOrder(root);
+		return preOrder.substring(0, preOrder.length() - 1);
+	}
+
 	public String preOrder(BSTNode root) {
 		StringBuffer sb = new StringBuffer();
 		if (root != null) {

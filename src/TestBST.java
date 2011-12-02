@@ -105,7 +105,9 @@ public class TestBST extends TestingClass {
 	public void testPreOrder() {
 		BST bst = basicBST();
 		assert "23,14,7,9,17,31".equals(bst.preOrder()) : "preorder 1";
+		assert "23,14,7,9,17,31".equals(bst.preOrderRecursive()) : "preorder recursive 1";
 		bst.remove(14);
 		assert "23,9,7,17,31".equals(bst.preOrder()) : "preorder 2";
+		assert "23,9,7,17,31".equals(bst.preOrderRecursive()) : "preorder recursive 2";
 	}
 }
