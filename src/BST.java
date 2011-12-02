@@ -199,4 +199,8 @@ public class BST {
 		}
 		return sb.toString();
 	}
+	
+	public String postOrder() {
+		return "";
+	}
 }

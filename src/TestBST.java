@@ -110,4 +110,9 @@ public class TestBST extends TestingClass {
 		assert "23,9,7,17,31".equals(bst.preOrder()) : "preorder 2";
 		assert "23,9,7,17,31".equals(bst.preOrderRecursive()) : "preorder recursive 2";
 	}
+
+	public void testPostOrder() {
+		BST bst = basicBST();
+		assert "9,7,17,14,31,23".equals(bst.postOrder()) : "postorder 1";
+	}
 }
