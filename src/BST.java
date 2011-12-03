@@ -77,11 +77,13 @@ public class BST {
 		}
 
 		/*
-		 * I needed to add this code because when you were trying to delete the root node it was blowing up because of NPE caused when trying to access root's parent which is
-		 * always null
+		 * I needed to add this code because when you were trying to delete the
+		 * root node it was blowing up because of NPE caused when trying to
+		 * access root's parent which is always null
 		 */
 
-		if (parent == null || (nodeToRemove.left != null && nodeToRemove.right != null)) {
+		if (parent == null
+				|| (nodeToRemove.left != null && nodeToRemove.right != null)) {
 			BSTNode largestValue = nodeToRemove.left;
 			while (largestValue.right != null)
 				largestValue = largestValue.right;
@@ -199,8 +201,19 @@ public class BST {
 		}
 		return sb.toString();
 	}
-	
+
 	public String postOrder() {
-		return "";
+		String postOrder = postOrder(root);
+		return postOrder.substring(0, postOrder.length() - 1);
+	}
+
+	public String postOrder(BSTNode root) {
+		StringBuffer sb = new StringBuffer();
+		if (root == null)
+			return sb.toString();
+		sb.append(postOrder(root.left));
+		sb.append(postOrder(root.right));
+		sb.append(root.value).append(",");
+		return sb.toString();
 	}
 }
