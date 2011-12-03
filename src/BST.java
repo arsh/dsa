@@ -216,4 +216,19 @@ public class BST {
 		sb.append(root.value).append(",");
 		return sb.toString();
 	}
+
+	public String inOrder() {
+		String inOrder = inOrder(root);
+		return inOrder.substring(0, inOrder.length() - 1);
+	}
+
+	public String inOrder(BSTNode root) {
+		StringBuffer sb = new StringBuffer();
+		if (root == null)
+			return sb.toString();
+		sb.append(inOrder(root.left));
+		sb.append(root.value).append(",");
+		sb.append(inOrder(root.right));
+		return sb.toString();
+	}
 }

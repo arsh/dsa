@@ -117,4 +117,11 @@ public class TestBST extends TestingClass {
 		bst.remove(14);
 		assert "7,17,9,31,23".equals(bst.postOrder()) : "postorder 2";
 	}
+
+	public void testInOrder() {
+		BST bst = basicBST();
+		assert "7,9,14,17,23,31".equals(bst.inOrder()) : "inorder 1";
+		bst.remove(14);
+		assert "7,9,17,23,31".equals(bst.inOrder()) : "inorder 2";
+	}
 }
