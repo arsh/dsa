@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -230,5 +232,23 @@ public class BST {
 		sb.append(root.value).append(",");
 		sb.append(inOrder(root.right));
 		return sb.toString();
+	}
+
+	public String breadthFirst() {
+		BSTNode myRoot = root;
+		Queue<BSTNode> queue = new LinkedList<BSTNode>();
+		StringBuffer sb = new StringBuffer();
+		while (myRoot != null) {
+			sb.append(myRoot).append(",");
+			if (myRoot.left != null)
+				queue.add(myRoot.left);
+			if (myRoot.right != null)
+				queue.add(myRoot.right);
+			if (!queue.isEmpty())
+				myRoot = queue.poll();
+			else
+				myRoot = null;
+		}
+		return sb.substring(0, sb.length() -1);
 	}
 }

@@ -124,4 +124,26 @@ public class TestBST extends TestingClass {
 		bst.remove(14);
 		assert "7,9,17,23,31".equals(bst.inOrder()) : "inorder 2";
 	}
+
+	public void testBreadthFirst() {
+		BST bst = basicBST();
+		assert "23,14,31,7,17,9".equals(bst.breadthFirst()) : "breadth 1";
+		bst.remove(14);
+		assert "23,9,31,7,17".equals(bst.breadthFirst()) : "breadth 2";
+		
+		bst = new BST();
+		bst.insert(23);
+		bst.insert(14);
+		bst.insert(31);
+		bst.insert(7);
+		bst.insert(17);
+		bst.insert(2);
+		bst.insert(8);
+		bst.insert(5);
+		bst.insert(9);
+		bst.insert(24);
+		bst.insert(40);
+		
+		assert "23,14,31,7,17,24,40,2,8,5,9".equals(bst.breadthFirst()) : "breadth 3";
+	}
 }
