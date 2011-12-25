@@ -19,6 +19,18 @@ public class Heap {
 		}
 	}
 
+	private int getParent(int i) {
+		return -1;
+	}
+
+	private int getLeftChild(int i) {
+		return -1;
+	}
+
+	private int getRightChild(int i) {
+		return -1;
+	}
+
 	public void swap(int i1, int i2) {
 		int value1 = graph.get(i1);
 		graph.set(i1, graph.get(i2));
