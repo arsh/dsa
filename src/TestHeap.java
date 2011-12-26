@@ -25,6 +25,12 @@ public class TestHeap extends TestingClass {
 		assert "[6, 8, 7, 23, 11, 9]".equals(heap.toString());
 
 	}
+	
+	public void testContains() {
+		Heap heap = buildHeap();
+		assert heap.contains(23) : "contains 23";
+		assert !heap.contains(66) : "contains 66";
+	}
 
 	public void testIndexOf() {
 		Heap heap = buildHeap();

@@ -32,7 +32,8 @@ public class Heap {
 						.get(getLeftChild(indexToDelete)) || graph
 						.get(indexToDelete) > graph
 						.get(getRightChild(indexToDelete)))) {
-			if (graph.get(getLeftChild(indexToDelete)) < graph.get(getRightChild(indexToDelete))) {
+			if (graph.get(getLeftChild(indexToDelete)) < graph
+					.get(getRightChild(indexToDelete))) {
 				swap(getLeftChild(indexToDelete), indexToDelete);
 				indexToDelete = getLeftChild(indexToDelete);
 			} else {
@@ -41,6 +42,13 @@ public class Heap {
 			}
 
 		}
+	}
+
+	public boolean contains(int value) {
+		for (int n : graph)
+			if (n == value)
+				return true;
+		return false;
 	}
 
 	public int indexOf(int value) {
