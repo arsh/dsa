@@ -13,22 +13,54 @@ public class Heap {
 	public void add(int value) {
 		graph.add(value);
 		int i = graph.size() - 1;
-		while (i > 0 && graph.get(i) < graph.get((i - 1) / 2)) {
-			swap(i, (i - 1) / 2);
-			i = (i - 1) / 2;
+		while (i > 0 && graph.get(i) < graph.get(getParent(i))) {
+			swap(i, getParent(i));
+			i = getParent(i);
 		}
 	}
 
-	private int getParent(int i) {
+	public void remove(int value) {
+		int indexToDelete = graph.indexOf(value);
+		if (indexToDelete < 0)
+			return;
+		int lastValue = graph.get(graph.size() - 1);
+		graph.set(indexToDelete, lastValue);
+		graph.remove(graph.size() - 1);
+
+		while (getLeftChild(indexToDelete) < graph.size()
+				&& (graph.get(indexToDelete) > graph
+						.get(getLeftChild(indexToDelete)) || graph
+						.get(indexToDelete) > graph
+						.get(getRightChild(indexToDelete)))) {
+			if (graph.get(getLeftChild(indexToDelete)) < graph.get(getRightChild(indexToDelete))) {
+				swap(getLeftChild(indexToDelete), indexToDelete);
+				indexToDelete = getLeftChild(indexToDelete);
+			} else {
+				swap(getRightChild(indexToDelete), indexToDelete);
+				indexToDelete = getRightChild(indexToDelete);
+			}
+
+		}
+	}
+
+	public int indexOf(int value) {
+		for (int i = 0; i < graph.size(); i++)
+			if (graph.get(i).equals(value))
+				return i;
+
 		return -1;
 	}
 
-	private int getLeftChild(int i) {
-		return -1;
+	public int getParent(int i) {
+		return (i - 1) / 2;
 	}
 
-	private int getRightChild(int i) {
-		return -1;
+	public int getLeftChild(int i) {
+		return (2 * i) + 1;
+	}
+
+	public int getRightChild(int i) {
+		return (2 * i) + 2;
 	}
 
 	public void swap(int i1, int i2) {
