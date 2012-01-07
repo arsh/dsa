@@ -19,4 +19,9 @@ public class Node {
 		Node other = (Node) obj;
 		return other.value == value;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Node{%d}", value);
+	}
 }
