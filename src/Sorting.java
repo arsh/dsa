@@ -3,8 +3,14 @@ import java.util.Arrays;
 public class Sorting {
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(bubbleSort(new int[] { 4, 56, 34, 3,
-				2, 55, 1 })));
+		int[] toSort = new int[] { 4, 56, 34, 3, 2, 55, 1 };
+		System.out.println(Arrays.toString(bubbleSort(toSort)));
+		BST bst = new BST();
+		for (int i : toSort)
+			bst.insert(i);
+		
+		bst.printInOrder(bst.root);
+		
 	}
 
 	public static int[] bubbleSort(int toSort[]) {
