@@ -79,13 +79,11 @@ public class BST {
 		}
 
 		/*
-		 * I needed to add this code because when you were trying to delete the
-		 * root node it was blowing up because of NPE caused when trying to
-		 * access root's parent which is always null
+		 * I needed to add this code because when you were trying to delete the root node it was blowing up because of NPE caused when trying to access root's parent which is
+		 * always null
 		 */
 
-		if (parent == null
-				|| (nodeToRemove.left != null && nodeToRemove.right != null)) {
+		if (parent == null || (nodeToRemove.left != null && nodeToRemove.right != null)) {
 			BSTNode largestValue = nodeToRemove.left;
 			while (largestValue.right != null)
 				largestValue = largestValue.right;
@@ -189,6 +187,47 @@ public class BST {
 		return sb.substring(0, sb.length() - 1);
 	}
 
+	public void printPreOrder(BSTNode root) {
+		if (root == null)
+			return;
+		System.out.println(root);
+		printPreOrder(root.left);
+		printPreOrder(root.right);
+	}
+
+	/**
+	 * iterative version
+	 */
+	public void printPreOrderIterative() {
+		Stack<BSTNode> stack = new Stack<BSTNode>();
+		stack.add(root);
+		while (!stack.isEmpty()) {
+			BSTNode current = stack.pop();
+			System.out.println(current);
+			if (current.right != null)
+				stack.add(current.right);
+
+			if (current.left != null)
+				stack.add(current.left);
+		}
+	}
+
+	public void printInOrder(BSTNode root) {
+		if (root == null)
+			return;
+		printInOrder(root.left);
+		System.out.println(root);
+		printInOrder(root.right);
+	}
+
+	public void printPostOrder(BSTNode root) {
+		if (root == null)
+			return;
+		printPostOrder(root.left);
+		printPostOrder(root.right);
+		System.out.println(root);
+	}
+
 	public String preOrderRecursive() {
 		String preOrder = preOrder(root);
 		return preOrder.substring(0, preOrder.length() - 1);
@@ -249,6 +288,6 @@ public class BST {
 			else
 				myRoot = null;
 		}
-		return sb.substring(0, sb.length() -1);
+		return sb.substring(0, sb.length() - 1);
 	}
 }

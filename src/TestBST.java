@@ -130,7 +130,7 @@ public class TestBST extends TestingClass {
 		assert "23,14,31,7,17,9".equals(bst.breadthFirst()) : "breadth 1";
 		bst.remove(14);
 		assert "23,9,31,7,17".equals(bst.breadthFirst()) : "breadth 2";
-		
+
 		bst = new BST();
 		bst.insert(23);
 		bst.insert(14);
@@ -143,7 +143,28 @@ public class TestBST extends TestingClass {
 		bst.insert(9);
 		bst.insert(24);
 		bst.insert(40);
-		
+
 		assert "23,14,31,7,17,24,40,2,8,5,9".equals(bst.breadthFirst()) : "breadth 3";
+	}
+
+	public void testPrintPreOrder() {
+		BST bst = basicBST();
+		bst.printPreOrder(bst.root);
+	}
+	
+	public void testPrintInOrder() {
+		BST bst = basicBST();
+		bst.printInOrder(bst.root);
+	}
+	
+	public void testPrintPostOrder() {
+		BST bst = basicBST();
+		bst.printPostOrder(bst.root);
+	}
+	
+	public void testPrintPreOrderIterative() {
+		System.out.println("TestBST.testPrintPreOrderIterative()");
+		BST bst = basicBST();
+		bst.printPreOrderIterative();
 	}
 }
