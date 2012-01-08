@@ -35,7 +35,21 @@ public class BST {
 	}
 
 	public boolean contains(int value) {
-		return contains(root, value);
+		//return contains(root, value);
+		return containsIterative(value);
+	}
+
+	public boolean containsIterative(int value) {
+		BSTNode x = root;
+		while (x != null) {
+			if (value > x.value)
+				x = x.right;
+			else if (value < x.value)
+				x = x.left;
+			else
+				return true;
+		}
+		return false;
 	}
 
 	public boolean contains(BSTNode current, int value) {
