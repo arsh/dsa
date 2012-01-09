@@ -1,3 +1,4 @@
+package generic;
 public class Fib {
 	/**
 	 * recursive impl

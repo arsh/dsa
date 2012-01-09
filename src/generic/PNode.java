@@ -1,3 +1,6 @@
+package generic;
+import dsa.annotated.Node;
+
 /**
  * priority node
  */

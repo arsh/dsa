@@ -1,2 +1,6 @@
-These are my codes, exercises for the book DSA, Data Structure and Algorithms: Annotated reference with examples.
-Note that this is an eclipse project.
+This project is where I keep all my exercises of Data Structure and Algorithms from different books.
+The name of the packages identify which book the code belongs to.
+
+com.algorist	--> The Algorithm Design Manual by Steve S. Skiena
+dsa.annotated 	--> Data Structures and Algorithms: Annotated Reference with Examples by Granville Barnett and Luca Del Tongo
+generic			--> Generic, independent algorithms

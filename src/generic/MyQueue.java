@@ -1,3 +1,6 @@
+package generic;
+import dsa.annotated.Node;
+
 public class MyQueue {
 	Node head;
 	Node tail;
