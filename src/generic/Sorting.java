@@ -1,8 +1,6 @@
 package generic;
 import java.util.Arrays;
 
-import dsa.annotated.BST;
-
 public class Sorting {
 
 	public static void main(String[] args) {
