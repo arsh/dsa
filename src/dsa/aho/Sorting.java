@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class Sorting {
 
-	private static int swapCount = 0;
-
 	/**
 	 * from the book
 	 */
@@ -64,7 +62,6 @@ public class Sorting {
 	}
 
 	private static void swap(int[] elements, int x, int y) {
-		swapCount++;
 		int t = elements[x];
 		elements[x] = elements[y];
 		elements[y] = t;
