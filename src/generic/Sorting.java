@@ -8,11 +8,7 @@ public class Sorting {
 	public static void main(String[] args) {
 		int[] toSort = new int[] { 4, 56, 34, 3, 2, 55, 1 };
 		System.out.println(Arrays.toString(bubbleSort(toSort)));
-		BST bst = new BST();
-		for (int i : toSort)
-			bst.insert(i);
-		
-		bst.printInOrder(bst.root);
+
 		
 	}
 
