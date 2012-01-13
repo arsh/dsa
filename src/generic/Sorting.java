@@ -1,13 +1,13 @@
 package generic;
+
 import java.util.Arrays;
 
 public class Sorting {
 
 	public static void main(String[] args) {
-		int[] toSort = new int[] { 4, 56, 34, 3, 2, 55, 1 };
-		System.out.println(Arrays.toString(bubbleSort(toSort)));
-
-		
+		int[] a = new int[] { 2, 4, 6, 8 };
+		int[] b = new int[] { 3, 5, 7, 9 };
+		System.out.println(Arrays.toString(merge(a, b)));
 	}
 
 	public static int[] bubbleSort(int toSort[]) {
@@ -26,5 +26,24 @@ public class Sorting {
 			}
 		}
 		return toSort;
+	}
+
+	public static int[] merge(int[] a, int[] b) {
+		int[] c = new int[a.length + b.length];
+		int i = 0, j = 0, k = 0;
+		while (i < a.length && j < b.length) {
+			if (a[i] < b[j]) {
+				c[k++] = a[i++];
+			} else if (a[i] > b[j]) {
+				c[k++] = b[j++];
+			}
+		}
+		while (i < a.length) {
+			c[k++] = a[i++];
+		}
+		while (j < b.length) {
+			c[k++] = b[j++];
+		}
+		return c;
 	}
 }
