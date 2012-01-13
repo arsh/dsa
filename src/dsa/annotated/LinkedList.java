@@ -103,4 +103,33 @@ public class LinkedList {
 		}
 		return sb.toString();
 	}
+	
+	public void reverse() {
+		Node previous = null;
+		Node temp = null;
+		Node current = head;
+		while (current != null) {
+			temp = current.next;
+			current.next = previous;
+			previous = current;
+			current = temp;
+		}
+		head = previous;
+	}
+	
+	public void printReverse(Node node) {
+		if (node == null)
+			return;
+		printReverse(node.next);
+		System.out.println(node.value);
+	}
+	
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		ll.add(new Node(1));
+		ll.add(new Node(2));
+		ll.add(new Node(3));
+		ll.add(new Node(4));
+		ll.printReverse(ll.head);
+	}
 }
