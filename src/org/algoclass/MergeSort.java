@@ -9,9 +9,9 @@ public class MergeSort {
 		if (len == 0 || len == 1)
 			return input;
 		int[] a = new int[len / 2];
-		int[] b = new int[len / 2];
+		int[] b = new int[len - (len / 2)];
 		System.arraycopy(input, 0, a, 0, len / 2);
-		System.arraycopy(input, len / 2, b, 0, len / 2);
+		System.arraycopy(input, len / 2, b, 0, len - (len / 2));
 		return merge(mergeSort(a), mergeSort(b));
 	}
 
@@ -28,6 +28,6 @@ public class MergeSort {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(mergeSort(new int[] { 1, 4, 10, 2, 0, 4, 68, 56, 20, 0, 12 })));
+		System.out.println(Arrays.toString(mergeSort(new int[] { 1, 4, 10, 2, 0, 4, 68, 56, 20, 12 })));
 	}
 }
