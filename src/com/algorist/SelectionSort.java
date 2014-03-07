@@ -6,7 +6,7 @@ package com.algorist;
  * @author andres
  * 
  */
-public class InsertionSort {
+public class SelectionSort {
 	
 	
 	public static void main(String[] args) {
