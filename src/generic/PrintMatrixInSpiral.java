@@ -1,6 +1,6 @@
 package generic;
 
-public class PrintMatrixDiagonally {
+public class PrintMatrixInSpiral {
 
 	private static class Movements {
 		private int cursor = -1;
