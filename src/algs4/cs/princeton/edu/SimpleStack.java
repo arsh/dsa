@@ -28,9 +28,7 @@ public class SimpleStack<T> {
 	@SuppressWarnings("unchecked")
 	public void resize(int max) {
 		T[] temp = (T[]) new Object[max];
-		for (int i = 0; i < size; i++) {
-			temp[i] = a[i];
-		}
+		System.arraycopy(a, 0, temp, 0, size);
 		a = temp;
 	}
 
