@@ -1,5 +1,7 @@
 package generic;
 
+import java.util.Arrays;
+
 /*
  Problem: Given an NxN matrix, print it in Spiral order moving clockwise starting from the center cell. 
  In some matrix there is no center cell instead a 2X2 matrix is the center, for example in a 6X6 matrix the center is a 2X2 matrix.
@@ -179,8 +181,37 @@ public class PrintMatrixInSpiral {
 		}
 	}
 
+	private static final int[] xd = { 1, 0, -1, 0 };
+	private static final int[] yd = { 0, 1, 0, -1 };
+
+	public static int[] go(int[][] matrix) {
+		final int N = matrix.length;
+		int[] res = new int[N * N];
+		int x = (N - 1) / 2;
+		int y = x;
+		int r = 0;
+		int d = 0;
+		out: for (int i = 0; i < N; i++)
+			for (int j = 0; j < 2; j++) {
+				for (int k = 0; k <= i; k++) {
+					if (r == res.length)
+						break out;
+					res[r++] = matrix[y][x];
+					x += xd[d];
+					y += yd[d];
+				}
+				d = (d + 1) % 4;
+			}
+		return res;
+	}
+
 	public static void main(String[] args) {
-		print(new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 },
-				{ 13, 14, 15, 16 } });
+		int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+		print(matrix);
+
+		System.out.println();
+
+		System.out.println(Arrays.toString(go(matrix)));
 	}
 }
